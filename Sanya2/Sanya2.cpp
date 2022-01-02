@@ -1,11 +1,10 @@
 ﻿#include <iostream>
 using namespace std;
-int PostCharge(int num, int base, int k = 0)
+int PostCharge(int num, int base)
 {
 	if (num == 0)
-		return k;
-	k += num % base + 10 * PostCharge(num / base, base, k);
-	return k;
+		return 0;
+	return num % base + 10 * PostCharge(num / base, base);
 }
 int main()
 {
